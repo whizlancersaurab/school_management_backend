@@ -9,7 +9,7 @@ const port = process.env.PORT || 3000;
 
 
 app.use(cors({
-  origin: "https://school-management-krsj.onrender.com",
+  origin: "*",
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true
