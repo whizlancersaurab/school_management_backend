@@ -8,6 +8,7 @@ require('dotenv').config()
 
 // ===================== LOGIN =====================
 exports.login = async (req, res) => {
+  console.log("hit me")
   try {
     const { email, password } = req.body;
 
@@ -22,6 +23,8 @@ exports.login = async (req, res) => {
       "SELECT id, email, password ,type_id FROM users WHERE email = ? LIMIT 1",
       [email]
     );
+
+    console.log("data" , users)
 
     if (!users || users.length === 0) {
       return res
